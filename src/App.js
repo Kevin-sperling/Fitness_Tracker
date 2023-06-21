@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './index.css';
-// import Header from './components/header';
+
 import Footer from './components/footer';
 import Routines from './components/routines';
 import Activities from './components/activities';
@@ -11,7 +11,6 @@ import NewUser from './components/newUser';
 import MyRoutines from './components/myRoutines';
 import Logo from './components/home'
 
-// created user "testuser123" with password "password" for testing
 
 const App = () => {
   const [token, setToken] = useState('');

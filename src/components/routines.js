@@ -17,7 +17,6 @@ const Routines = ({ token, username }) => {
 
 
             const result = await response.json();
-            console.log("result", result);
             setRoutines(result)
 
         } catch (err) {

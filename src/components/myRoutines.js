@@ -33,7 +33,7 @@ const MyRoutines = ({ token, username }) => {
             });
             const result = await response.json();
 
-            console.log(result);
+
 
             setMyRoutines(result)
 
@@ -60,7 +60,6 @@ const MyRoutines = ({ token, username }) => {
                 })
             })
             const result = await response.json()
-            console.log('new routine result', result);
 
             setName('')
             setGoal('')
@@ -90,7 +89,6 @@ const MyRoutines = ({ token, username }) => {
                 })
             })
             const result = await response.json()
-            console.log('patch routine result', result);
 
             setName('');
             setGoal('');
@@ -123,7 +121,6 @@ const MyRoutines = ({ token, username }) => {
                 },
             });
             const result = await response.json();
-            console.log('delete reoutine restuls:', result);
 
             setRoutineId('')
 
@@ -138,7 +135,6 @@ const MyRoutines = ({ token, username }) => {
 
     const deleteRoutine = (routineId) => {
         setRoutineId(routineId);
-        console.log(routineId);
         handleRoutineDelete();
 
     };
@@ -160,7 +156,6 @@ const MyRoutines = ({ token, username }) => {
 
     const handleAddActivitySubmit = async (routineId) => {
 
-        console.log('activityId, count, duration, routineId', activityId, count, duration, routineId);
         try {
             const response = await fetch(`${API_URL}/routines/${routineId}/activities`, {
                 method: "POST",
@@ -176,7 +171,6 @@ const MyRoutines = ({ token, username }) => {
             });
 
             const result = await response.json();
-            console.log("add activity", result);
 
             setRoutineId('');
             setActivityId('');
@@ -198,7 +192,6 @@ const MyRoutines = ({ token, username }) => {
 
     const handleUpdateRoutineActivity = async () => {
 
-        console.log('routineActivityId, count, duration', routineActivityId, count, duration);
         try {
             const response = await fetch(`${API_URL}/routine_activities/${routineActivityId}`, {
                 method: "PATCH",
@@ -212,7 +205,6 @@ const MyRoutines = ({ token, username }) => {
                 })
             });
             const result = await response.json();
-            console.log('patch routine activity results:', result);
 
             setDuration('');
             setCount('');
@@ -236,7 +228,6 @@ const MyRoutines = ({ token, username }) => {
                 },
             });
             const result = await response.json();
-            console.log('delete routine activity results:', result);
 
             fetchData();
 

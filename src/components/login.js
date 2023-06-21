@@ -15,11 +15,9 @@ const LogInForm = ({ token, setToken, username, setUsername, password, setPasswo
                 })
             });
             const data = await response.json()
-            console.log(data.token);
 
             setToken(data.token)
 
-            console.log("token", token);
 
         }
         catch (error) {

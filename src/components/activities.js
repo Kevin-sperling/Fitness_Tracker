@@ -49,7 +49,6 @@ const Activities = ({ token }) => {
                 })
             })
             const results = await response.json()
-            console.log('results', results);
 
             fetchData();
 
@@ -63,7 +62,6 @@ const Activities = ({ token }) => {
 
 
     const getRoutinesbyActivity = async (activityId) => {
-        console.log(activityId)
         try {
             const response = await fetch(`${API_URL}/${activityId}/routines`, {
                 headers: {
@@ -71,9 +69,7 @@ const Activities = ({ token }) => {
                 },
             });
             const result = await response.json();
-            console.log('results', result);
             setRoutines(result);
-            console.log('rounites with this activity', routines);
 
             setGettingRoutines(true);
 
